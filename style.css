@@ -1,0 +1,144 @@
+/* ベース設定 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+/* コンテナ */
+.container {
+  width: min(90%, 960px);
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+/* ヘッダー */
+header {
+  padding-block: 1.5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+/* ナビゲーション */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* セクション共通 */
+section {
+  padding-block: 2.5rem;
+  padding-inline: 1rem;
+}
+section h2 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding-block: 1.25rem;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 2.5rem;  
+}
+
+/* セクション内のテキスト中央寄せ */
+.hero p,
+#about p,
+#skills ul,
+#message p {
+  text-align: center;
+}
+
+/* フッターに作るリンク関連 */
+.footer {
+  background-color: #f9f9f9;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.social-links a:hover {
+  color: #0077cc;
+}
+
+.social-links i {
+  font-size: 28px;
+  margin-bottom: 0.3rem;
+}
+
+/* リンク、フォーカス時の描写 */
+a:focus {
+  outline: 2px solid #00bcd4;
+  outline-offset: 2px;
+}
+
+/* リンクとボタンのフォーカス時スタイル */
+a:focus,
+button:focus {
+  outline: 3px solid #00bcd4;  /* 明るいシアン系のはっきりしたアウトライン */
+  outline-offset: 3px;          /* アウトラインと要素の間に少し余白を */
+  box-shadow: 0 0 8px #00bcd4aa; /* ぼかしの強調で視認性アップ */
+  transition: box-shadow 0.3s ease;
+}
+
+/* リンクのホバーとフォーカス時の強調線（下線） */
+a:hover,
+a:focus {
+  color: #00bcd4;
+  text-decoration: underline;  /* 下線で強調 */
+  text-decoration-thickness: 2px; /* 下線をやや太めに */
+  text-underline-offset: 3px;  /* 下線の位置調整 */
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+/* ボタンのホバーとフォーカス時の強調線（ボーダー） */
+button:hover,
+button:focus {
+  border: 2px solid #00bcd4;
+  box-shadow: 0 0 8px #00bcd4cc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
