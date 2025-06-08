@@ -1,108 +1,127 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>introduction - BonchaN</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="reset.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BonchaN - ProfileSite</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+   <!-- おしゃれフォント -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <!-- ファビコン画像 -->
+  <link rel="icon" href="img/favicon.png"/>
+  <!-- OGP（基本設定） -->
+  <meta property="og:title" content="ぼんちゃんのポートフォリオサイト" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="あなたのサイトのURL" />
+  <meta property="og:image" content="https://あなたのサイトのURL/ogp.jpg"/>
+  <meta property="og:description" content="Webアプリエンジニアの自己紹介サイトです。" />
+  <meta property="og:locale" content="ja_JP" />
+  <!-- OGP (Twitterカード設定) -->
+  <meta name="twitter:card" content="ogp.jpg" />
+  <meta name="twitter:site" content="@BonchaN_val" />
+  <meta name="twitter:title" content="ぼんちゃんのポートフォリオサイト" />
+  <meta name="twitter:description" content="Webアプリエンジニアの自己紹介サイトです。" />
+  <meta name="twitter:image" content="https://あなたのサイトのURL/ogp.jpg"/>
+
 </head>
 <body>
-  <!-- ハンバーガーメニュー -->
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">BonchaN</h1>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#message">Message</a></li>
-        </ul>
-      </nav>
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span><span></span><span></span>
+  <!-- カーソル -->
+  <div id="cursor"></div>
+
+  <!-- ヘッダー -->
+  <header class="hero-header">
+    <div class="overlay">
+      <div class="container">
+        <h1 class="logo">BonchaN's profile site</h1>
+        <h2 class="logo">～Javaで地力を鍛え中のフルスタック志望エンジニア～</h2>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#skills">Skills</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- メイン -->
-  <main>
-    <!-- ヒーロー -->
-    <section class="hero">
-      <h2>On My Way to Becoming a Coder</h2>
-      <p class="subtext">かけだしエンジニア BonchaN のポートフォリオ</p>
-      <br>
-      <p>こんにちは、BonchaNです。</p>
-      <!-- 仮の画像 -->
-      <img src="https://via.placeholder.com/150" alt="プロフィール画像" class="profile-img">
-    </section>
+<main>
 
-    <!-- About -->
-    <section id="about" class="section">
+<!-- 将来、これだけもっと別の方法で強調表現させたい（現状は下のセクションに同じ） -->
+<section class="section" id="message">
+  <div class="container section-layout">
+    <div class="section-text">
+      <h2>What Drives Me</h2>
+      <p>「プログラマーってかっこいい！」という憧れから学び始めました。</p>
+      <p>今は“プログラミング＝ものづくりと課題解決”だと実感しています。</p>
+      <p>ただの勉強は今も得意ではありません。</p>
+      <p>でも「作りたいものがある」「困ってる人の役に立ちたい」と思った瞬間、必要な技術を調べて、何時間でも集中できる。</p>
+      <p>そういう自分に気づいてから、プログラミングが本当に好きになりました。</p>
+    </div>
+    <img src="./img/message.jpg" alt="パソコンの画像" class="section-img" />
+  </div>
+</section>
+
+<section class="section reverse" id="about">
+  <div class="container section-layout">
+    <div class="section-text">
       <h2>About Me</h2>
       <p>元プロゲーマー。現在はWebサイト制作を勉強中。</p>
-      <p>ネットワーク系のSESを1年経験し、今はJavaやフロントエンドの基礎を学習中 & アウトプットしています。</p>
-      <p>読書（小説・ビジネス書）が好きで、図書館にまつわる体験や気づきをnoteで発信しています。</p>
-      <p class="note-link">
-  ▶︎   <a href="https://note.com/bonchan_create/n/n98023562840a" target="_blank" rel="noopener noreferrer">
-      タイトル：図書館は「雑に使う」と100倍楽しい
-      </a>
-</p>
-    </section>
+      <p>ネットワーク系のSESを1年経験し、今はJava(Spring Boot)やフロントエンドの基礎を学習＆アウトプット中。</p>
+      <p>読書が好きで、図書館にまつわる体験や気づきをnoteで発信しています。</p>
+      <p>
+        ▶︎ <a href="https://note.com/bonchan_create/n/n98023562840a" target="_blank" rel="noopener noreferrer">
+          図書館は「雑に使う」と100倍楽しい（note）
+        </a>
+      </p>
+    </div>
+    <img src="img/fps.jpg" alt="FPSの大会風景" class="section-img" />
+  </div>
+</section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
+<section class="section" id="hobbies">
+  <div class="container section-layout">
+    <div class="section-text">
+      <h2>My Hobbies</h2>
+      <p>近所の公園で読書をするのが好きです。ジャンルは小説やビジネス書など、幅広く読みます。</p>
+      <p>気になった内容はすぐに実践し、心に響いた言葉はスマホのメモに残しています。</p>
+      <p>特に心に残っている一冊は、東野圭吾さんの『クスノキの番人』です。</p>
+    </div>
+    <img src="./img/hobbies.jpg" alt="本の画像" class="section-img" />
+  </div>
+</section>
+
+<section class="section reverse" id="skills">
+  <div class="container section-layout">
+    <div class="section-text">
       <h2>Skills & Tools</h2>
       <ul>
-        <li>Java</li>
+        <li>Java（Spring Boot）</li>
         <li>HTML / CSS / JavaScript</li>
-        <li>Eclipse / VScode</li>
+        <li>IntelliJ IDEA / Eclipse / VS code</li>
       </ul>
-    </section>
+    </div>
+    <img src="./img/skills.jpg" alt="スキルアップのイメージ" class="section-img" />
+  </div>
+</section>
 
-    <!-- Message -->
-    <section id="message" class="section">
-      <h2>What Drives Me</h2>
-      <p>小さなことでもコツコツ、自分の手で作って成長していきたい。</p>
-      <p>今後は技術ブログやコーポレートサイト制作にも挑戦していきます。</p>
-    </section>
-  </main>
+</main>
 
-  <!-- トップへ戻るボタン -->
-  <button id="to-top" class="to-top">↑</button>
+  <footer class="footer">
+    <ul class="social-links">
+      <li><a href="https://twitter.com/BonchaN_val" target="_blank"><i class="fab fa-x-twitter"></i>Twitter</a></li>
+      <li><a href="https://note.com/bonchan_create/n/n98023562840a" target="_blank"><i class="fas fa-sticky-note"></i>Note</a></li>
+      <li><a href="https://crowdworks.jp/public/employees/6373558?ref=login_header" target="_blank"><i class="fas fa-briefcase"></i>CrowdWorks</a></li>
+      <li><a href="https://github.com/BonchaN66?tab=repositories" target="_blank"><i class="fab fa-github"></i>GitHub</a></li>
+    </ul>
+    <p class="copyright">
+    &copy; 2025 takuya fujisaki. All rights reserved.
+    </p>
+  </footer>
+  
+  <button id="backToTop" class="back-to-top" aria-label="トップに戻る">↑</button>
 
-  <!-- スクリプト -->
-  <script src="script.js"></script>
-
-<footer class="footer">
-  <ul class="social-links">
-    <li>
-      <a href="https://twitter.com/BonchaN_val" target="_blank">
-        <i class="fab fa-x-twitter"></i>
-        <span>日々のつぶやき</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://note.com/bonchan_create/n/n98023562840a" target="_blank">
-        <i class="fas fa-sticky-note"></i>
-        <span>読み物・図書館note</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://crowdworks.jp/public/employees/6373558?ref=login_header" target="_blank">
-        <i class="fas fa-briefcase"></i>
-        <span>クラウドワークス</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/BonchaN66?tab=repositories" target="_blank">
-        <i class="fab fa-github"></i>
-        <span>コード置き場</span>
-      </a>
-    </li>
-  </ul>
-</footer>
-
+  <script src="main.js"></script>
 </body>
 </html>

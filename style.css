@@ -1,144 +1,252 @@
-/* ベース設定 */
+/* === Base === */
 body {
+  cursor: none;
   margin: 0;
-  padding: 0;
   font-family: 'Helvetica Neue', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: #ffffff;
+  background-color: #00999e;
+
+  /* 背景テクスチャ */
+  background-image: url('img/black-linen.png');
+  background-repeat: repeat; /* 繰り返す */
+  background-position: top left; /* 開始位置 */
+  background-attachment: fixed; /* スクロールしても固定 */
+  background-size: auto; /* サイズ調整も可能 */
 }
 
-/* コンテナ */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* === Container === */
 .container {
-  width: min(90%, 960px);
+  width: min(96%, 1200px);  /* 余白を減らしてコンテンツ幅を広めに */
   margin-inline: auto;
   padding: 1rem;
 }
 
-/* ヘッダー */
-header {
-  padding-block: 1.5rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-header h1 {
-  margin: 0;
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+/* === Hero Header === */
+.hero-header {
+  background: url("./img/ogp.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
 }
 
-/* ナビゲーション */
-nav {
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-header .overlay {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding-block: 2rem;
+}
+
+.logo {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  margin: 0;
+}
+
+.nav {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
-nav a {
+
+.nav a {
+  font-size: 1.1rem;
+  padding: 0.1rem;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
-}
-nav a:hover {
-  color: #00bcd4;
+  transition: color 0.3s, transform 0.2s;
+  display: inline-block;
 }
 
-/* セクション共通 */
-section {
-  padding-block: 2.5rem;
-  padding-inline: 1rem;
-}
-section h2 {
-  font-size: clamp(1.25rem, 4vw, 2rem);
-  margin-bottom: 1.5rem;
-  text-align: center;
+.nav a:hover {
+  color: #0000c7;
+  transform: scale(1.2);
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* フッター */
-footer {
-  text-align: center;
-  padding-block: 1.25rem;
-  font-size: 0.9rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  margin-top: 2.5rem;  
+/* === Section Layout === */
+.section {
+  padding-block: 4rem;
 }
 
-/* セクション内のテキスト中央寄せ */
-.hero p,
-#about p,
-#skills ul,
-#message p {
-  text-align: center;
+.section-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-/* フッターに作るリンク関連 */
+.section.reverse .section-layout {
+  flex-direction: row-reverse;
+}
+
+.section-img {
+  flex: 1 1 60%;
+  min-width: 300px;
+  max-width: 700px;
+  object-fit: cover;
+  align-self: center;
+  margin-right: 1rem;
+}
+
+.section.reverse .section-img {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+.section-text {
+  flex: 1 1 35%;
+  max-width: 500px;
+  align-self: center;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .section-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-img {
+    width: 90%;
+    max-width: 400px;
+    margin: 1rem 0;
+  }
+
+  .section-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* === Footer === */
 .footer {
-  background-color: #f9f9f9;
-  padding: 2rem 1rem;
+  background-color: #00999e;
   text-align: center;
+  padding: 2rem 1rem;
 }
 
 .social-links {
   list-style: none;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 0;
+  gap: 3rem;
   margin: 0;
 }
 
-.social-links li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .social-links a {
+  color: #ffffff;
   text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-  font-size: 14px;
+  transition: color 0.3s,transform 0.2s;
+  display: inline-block;
 }
 
 .social-links a:hover {
-  color: #0077cc;
+  color: #0000c7;
+  transform: scale(1.2);
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
 .social-links i {
-  font-size: 28px;
-  margin-bottom: 0.3rem;
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
-/* リンク、フォーカス時の描写 */
-a:focus {
-  outline: 2px solid #00bcd4;
-  outline-offset: 2px;
+.footer .copyright {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #ccc;
 }
 
-/* リンクとボタンのフォーカス時スタイル */
-a:focus,
-button:focus {
-  outline: 3px solid #00bcd4;  /* 明るいシアン系のはっきりしたアウトライン */
-  outline-offset: 3px;          /* アウトラインと要素の間に少し余白を */
-  box-shadow: 0 0 8px #00bcd4aa; /* ぼかしの強調で視認性アップ */
-  transition: box-shadow 0.3s ease;
+/* アニメーション */
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
 }
 
-/* リンクのホバーとフォーカス時の強調線（下線） */
-a:hover,
-a:focus {
-  color: #00bcd4;
-  text-decoration: underline;  /* 下線で強調 */
-  text-decoration-thickness: 2px; /* 下線をやや太めに */
-  text-underline-offset: 3px;  /* 下線の位置調整 */
-  transition: color 0.3s, text-decoration-color 0.3s;
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ボタンのホバーとフォーカス時の強調線（ボーダー） */
-button:hover,
-button:focus {
-  border: 2px solid #00bcd4;
-  box-shadow: 0 0 8px #00bcd4cc;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+/* back to top */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #007050;
+  color: white;
+  border: none;
+  border-radius: 60%;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: scale(1.2);
+  background-color: #a100a1;
+}
+
+/* カーソル */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff200;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+#cursor.hovering {
+  transform: scale(1.5);
+  background-color: #a100a1;
 }
