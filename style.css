@@ -6,6 +6,7 @@ body {
   color: #fff;
   background: #00999e url('img/black-linen.png') repeat top left fixed;
   background-size: auto;
+  overflow-x: hidden; /* 強制余白排除 */ 
 }
 
 img {
